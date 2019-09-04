@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:200,300,400,500,600,700,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 120%;
+}
+
+body {
+    background-image: url(img/2.jpg);
+    background-size: cover;
+    font-family: 'Noto Serif JP', serif;
+}
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 80px 460px 60px;
+}
+
+.menu {
+    grid-column: 1/ -1;
+    background-color: rgba(95, 39, 205, 0.65);
+}
+
+.menuElement {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.menuElement li {
+    display: inline-block;
+    font-size: 150%;
+    color: white;
+}
+
+.menuElement li a:hover {
+    border-bottom: 2px solid white;
+    
+}
+
+
+.imgLi a img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-top: 15%;
+}
+
+
+.content {
+    grid-column: 4 / 10;
+    grid-row: 2 / 3;
+    color: white;
+    font-size: 120%;
+    margin-top: 3%;
+}
+
+h2 {
+	width: 100%;
+	font-size: 150%;
+	background-color: rgba(243, 104, 224, 0.9);
+	border-radius: 10px;
+	font-weight: 200;
+	border: 1px solid white;
+	display: flex;	
+	align-items: center;
+}
+
+table {
+  width: 100%;
+  border: 1px solid white;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  font-weight:200;
+}
+tr > th {
+	background-color: rgba(0, 0, 0, 0.7);	
+	font-size:120%;
+	font-weight:300;
+}
+
+tr:nth-child(even){background-color: rgba(95, 39, 205, 0.9);}
+
+tr:nth-child(odd){background-color: rgba(243, 104, 224, 0.9);}
+
+.contentValue {
+    width: 100%;
+    border-radius: 100px;
+    text-decoration: none;
+    border: 1px solid white;
+    background-color: rgba(243, 104, 224, 0.7); 
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contentValueName {
+    width: 80%;
+    padding: 1% 2%;
+}
+
+.contentValueDelete {
+    margin-right: 5%;
+}
+
+
+.contentValueName:hover {
+    color: #e0e0e0;
+}
+
+.contentValueDelete:hover {
+    color: red;
+}
+
+.contentValueEdit:hover {
+    color: green;
+}
+
+.footer {
+    grid-row: 3 / -1;
+    grid-column: 1 / 4;
+    color: white;
+    font-size: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgba(95, 39, 205, 0.5);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+

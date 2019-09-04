@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:200,300,400,500,600,700,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 120%;
+}
+
+body {
+    background-image: url(img/2.jpg);
+    background-size: cover;
+    font-family: 'Noto Serif JP', serif;
+}
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 80px 460px 60px;
+}
+
+.menu {
+    grid-column: 1/ -1;
+    background-color: rgba(95, 39, 205, 0.65);
+}
+
+.menuElement {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.menuElement li {
+    display: inline-block;
+    font-size: 150%;
+    color: white;
+}
+
+.menuElement li a:hover {
+    border-bottom: 2px solid white;
+    
+}
+
+
+.imgLi a img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-top: 15%;
+}
+
+
+.content {
+    grid-column: 5 / 9;
+    grid-row: 2 / 3;
+    color: white;
+    font-size: 150%;
+    margin-top: 3%;
+}
+
+h2 {
+	width: 100%;
+	font-size: 150%;
+	background-color: rgba(243, 104, 224, 0.9);
+	border-radius: 10px;
+	font-weight: 200;
+	border: 1px solid white;
+	display: flex;	
+	align-items: center;
+}
+
+.contentValue {
+    width: 100%;
+    border-radius: 100px;
+    text-decoration: none;
+    border: 1px solid white;
+    background-color: rgba(243, 104, 224, 0.9); 
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contentValueName {
+    width: 80%;
+    padding: 1% 2%;
+}
+
+.contentValueDelete {
+    margin-right: 5%;
+}
+
+
+.contentValueName:hover {
+    color: #e0e0e0;
+}
+
+.contentValueDelete:hover {
+    color: rgba(206, 6, 6, 0.6);
+}
+
+.contentValueEdit:hover {
+    color: rgba(41, 155, 26, 0.6);
+}
+
+.delete {
+	display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 10px;
+    border: 2px solid white;
+    box-shadow: 0 10px 20px rgba(243, 104, 224, 0.8);
+    background-color: rgba(95, 39, 205, 0.7);
+    width: 100%;
+    height: 180px;
+    margin: auto;
+    text-align: center;
+}
+
+.delete p {
+    color: white;
+    padding: 0 10%;
+    font-size: 90%;
+}
+
+.no,
+.yes {
+    background-color: rgba(243, 104, 224, 0.8);
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    width: 20%;
+    margin: 5% auto;
+    padding: 1%;
+}
+
+.no {
+    margin-right: 50%;
+}
+
+.no a,
+.yes a {
+    text-decoration: none;
+    font-size: 200%;
+    font-weight: 100;
+    color: white;
+    text-align: center;
+}
+
+.no:hover,
+.yes:hover {
+    border: 1px solid rgba(243, 104, 224, 0.8);
+    background-color: rgba(95, 39, 205, 0.7);
+}

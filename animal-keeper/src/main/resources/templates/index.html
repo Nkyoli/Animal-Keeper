@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Animal Keeper</title>
+        <link rel="shortcut icon" th:href="@{/img/logoIcon.jpg}">
+        
+        <!-- Meta tags  -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         
+        <!-- Links -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/animate.css}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="menu animated fadeInDown">
+                <nav>
+                    <ul class="menuElement">
+                        <li class="imgLi"><a th:href="@{__${T(com.animal.keeper.util.MappingNames).INDEX}__}"><img src="/img/logo.jpg" alt="Logo"></a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li class="searchLi">
+     						<form action="#" th:action="@{__${T(com.animal.keeper.util.MappingNames).SEARCH}__}" method="get">
+     							<input type="text" id="search" th:name="search" placeholder=" Search">
+	                            <input type="submit" id="submit" value="Search">
+     						</form>                  
+                        </li>
+                    </ul>
+                </nav> 
+            </div>
+            
+            <div class="content animated zoomIn">
+                <h1>AnimalKeeper data Management</h1>
+                <a class="btn" th:href="@{__${T(com.animal.keeper.util.MappingNames).GET_ALL}__}"><ion-icon name="folder-open"></ion-icon> List of Animals</a>
+                <a class="btn" th:href="@{__${T(com.animal.keeper.util.MappingNames).SAVE}__}"><ion-icon name="add-circle-outline"></ion-icon> Add an animal</a>
+            </div>
+             
+            <div class="footer animated fadeInLeft">
+                <i>&copy; Copyright, Lionel Youmbi</i>
+                <a href="https://github.com/Nkyoli"><ion-icon name="logo-github"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            </div>
+        </div>
+          
+        
+        <section>
+        
+        
+        </section>
+        
+        <footer>
+        
+        </footer>
+        <!-- Scripts -->
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <script src="/js/script.js"></script>
+    </body>
+</html>

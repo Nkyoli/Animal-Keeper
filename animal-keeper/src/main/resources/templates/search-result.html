@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Animal Keeper</title>
+        <link rel="shortcut icon" th:href="@{/img/logoIcon.jpg}">
+        
+        <!-- Meta tags  -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         
+        <!-- Links -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/search-result.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/animate.css}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="menu animated fadeInDown">
+                <nav>
+                    <ul class="menuElement">
+                        <li class="imgLi"><a th:href="@{__${T(com.animal.keeper.util.MappingNames).INDEX}__}"><img src="/img/logo.jpg" alt="Logo"></a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav> 
+            </div>
+            
+            <div class="content animated fadeInUp">
+           		<h2 th:if="${animals == null}" th:text="${message}"></h2>
+          			<table th:unless="${animals == null}">
+            		<tr>
+            			<th>Id</th>
+            			<th>Name</th>
+            			<th>Species</th>
+            			<th>Country of Origin</th>
+            			<th>Date of Birth</th>
+            		</tr>
+            		<tr th:each="animal : ${animals}">
+            			<td th:text="${animal.id}"></td>
+            			<td th:text="${animal.name}"></td>
+            			<td th:text="${animal.species}"></td>
+            			<td th:text="${animal.countryOrigin}"></td>
+            			<td th:text="${animal.dateOfBirth}"></td>
+            		</tr>
+            	</table>
+            </div>
+             
+            <div class="footer animated fadeInLeft">
+                <i>&copy; Copyright, LY</i>
+                <a href="https://github.com/Nkyoli"><ion-icon name="logo-github"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            </div>
+        </div>
+        <!-- Scripts -->
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <script src="/js/script.js"></script>
+    </body>
+</html>

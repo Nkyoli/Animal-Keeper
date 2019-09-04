@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Animal Keeper</title>
+        <link rel="shortcut icon" th:href="@{/img/logoIcon.jpg}">
+        
+        <!-- Meta tags  -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         
+        <!-- Links -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/all-animals-style.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/animate.css}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="menu animated fadeInDown">
+                <nav>
+                    <ul class="menuElement">
+                        <li class="imgLi"><a th:href="@{__${T(com.animal.keeper.util.MappingNames).INDEX}__}"><img src="/img/logo.jpg" alt="Logo"></a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav> 
+            </div>
+            
+            <div class="content animated fadeInUp">
+            	<h2 th:if="${animals.size() == 0}" th:text="${message}"></h2>
+                <div th:unless="${animals.size() == 0}" class="contentValue" th:each="animal : ${animals}">
+                    <a th:href="@{__${T(com.animal.keeper.util.MappingNames).ANIMAL_DETAILS_VALUE}__}" class="contentValueName"><span th:text="${animal.id}"></span><span>. </span><span th:text="${animal.name}"></span></a>    
+                    <a th:href="@{__${T(com.animal.keeper.util.MappingNames).GET_BY_ID_VALUE}__}" class="contentValueEdit"><ion-icon name="create"></ion-icon></a>
+                    <a href="#" class="contentValueDelete js-deleteBtn"><ion-icon name="trash"></ion-icon></a>
+                	
+                	 <div class="delete js-delete animated zoomOut"><hr>
+                        <div>CONFIRMATION</div>
+                        <hr>
+                        <p>🤔 🤔 Do you want to DELETE this animal?</p>
+                        <button class="no js-no"><a href="#">NO</a></button>
+                        <button class="yes js-yes"><a th:href="@{__${T(com.animal.keeper.util.MappingNames).DELETE_ID_VALUE}__}">YES</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Scripts -->
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="/js/script.js"></script>
+    </body>
+</html>

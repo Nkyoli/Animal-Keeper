@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Animal Keeper</title>
+        <link rel="shortcut icon" th:href="@{/img/logoIcon.jpg}">
+        
+        <!-- Meta tags  -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         
+        <!-- Links -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/animal-details.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/animate.css}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="menu">
+                <nav>
+                    <ul class="menuElement">
+                        <li class="imgLi"><a th:href="@{__${T(com.animal.keeper.util.MappingNames).INDEX}__}"><img src="/img/logo.jpg" alt="Logo"></a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav> 
+            </div>
+            
+            <div class="content">
+          			<table id="js-table">
+            		<tr>
+            			<th>Id</th>
+            			<td th:text="${animal.id}"></td>
+            		</tr>
+            		<tr>
+            			<th>Name</th>
+            			<td th:text="${animal.name}"></td>
+            		</tr>
+            		<tr>	
+            			<th>Species</th>
+            			<td th:text="${animal.species}"></td>
+            		</tr>
+            		<tr>	
+            			<th>Country of Origin</th>
+            			<td th:text="${animal.countryOrigin}"></td>
+            		</tr>
+            		<tr>	
+            			<th>Date of Birth</th>
+            			<td th:text="${animal.dateOfBirth}"></td>
+            		</tr>
+            		<tr>	
+            			<th>Weight</th>
+            			<td th:text="${animal.weight}"></td>
+            		</tr>
+            		<tr>	
+            			<th>Height</th>
+            			<td th:text="${animal.height}"></td>
+            		</tr>
+            	</table>
+            	
+            	<div class="btn-previous-next">
+            		<a th:href="@{__${T(com.animal.keeper.util.MappingNames).PREVIOUS_VALUE}__}" id="js-previous"><ion-icon name="rewind"></ion-icon></a>
+            		<a th:href="@{__${T(com.animal.keeper.util.MappingNames).NEXT_VALUE}__}" id="js-next"><ion-icon name="fastforward"></ion-icon></a>
+            	</div>
+            </div>
+        </div>
+        <!-- Scripts -->
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="/js/script.js"></script>
+    </body>
+</html>

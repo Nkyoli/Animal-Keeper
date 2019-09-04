@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Animal Keeper</title>
+        <link rel="shortcut icon" th:href="@{/img/logoIcon.jpg}">
+        
+        <!-- Meta tags  -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         
+        <!-- Links -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/add-animal-style.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/animate.css}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="menu animated fadeInDown">
+                <nav>
+                    <ul class="menuElement">
+                        <li class="imgLi"><a th:href="@{__${T(com.animal.keeper.util.MappingNames).INDEX}__}"><img src="/img/logo.jpg" alt="Logo"></a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav> 
+            </div>
+            
+            <div class="content animated fadeInUp">
+                <form action="#" th:action="@{__${T(com.animal.keeper.util.MappingNames).SAVE}__}"  th:object="${animal}" method="post">
+                	
+                	<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+                    <input type="text" th:field="*{name}" maxlength="15" placeholder="Name">
+                    
+                    <span th:if="${#fields.hasErrors('species')}" th:errors="*{species}"></span>
+                    <input type="text" th:field="*{species}" maxlength="20" placeholder="Species">
+                    
+                    <span th:if="${#fields.hasErrors('countryOrigin')}" th:errors="*{countryOrigin}"></span>
+                    <input type="text" th:field="*{countryOrigin}" maxlength="20" placeholder="Country of Origin">
+
+                    <span th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}"></span>
+                    <input type="text" th:field="*{dateOfBirth}" pattern="(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d" 
+                    maxlength="10" placeholder="Birth date MM/DD/YYYY">
+                    
+                    <span th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}"></span>
+                    <input type="number" th:field="*{weight}" step=".01" placeholder="Weight in kilograms">
+                    
+                    <span th:if="${#fields.hasErrors('height')}" th:errors="*{height}"></span>
+                    <input type="number" th:field="*{height}" step=".01" placeholder="Height in meters">
+                    
+                    <input class="btn" type="submit" id="save" value="SAVE">
+                </form>
+            </div>
+             
+            <div class="footer animated fadeInLeft">
+                <i>&copy; Copyright, LY</i>
+                <a href="https://github.com/Nkyoli"><ion-icon name="logo-github"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            </div>
+        </div>
+          
+        <!-- Scripts -->
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <script src="/js/script.js"></script>
+    </body>
+</html>
