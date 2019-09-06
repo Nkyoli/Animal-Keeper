@@ -97,8 +97,7 @@ form {
 }
 
 form > span {
-	color: yellow;
-	text-transform: italic;
+	color: yellow; 
 	font-size: 50%;
 	margin: 0 0 0 auto;
 }
